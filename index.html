@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Aniversário Dona Nilza ❤️</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <link rel="stylesheet" href="/css/dashboard.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>❤️ Feliz Aniversário Dona Nilza ❤️</h1>
+            <p class="slogan">Um presente feito com muito amor e carinho especial para você</p>
+        </div>
+        <nav>
+            <a href="#home" onclick="showSection('home')" class="nav-active"><i class="fas fa-home"></i> Início</a>
+            <a href="#memories" onclick="showSection('memories')"><i class="fas fa-images"></i> Memórias</a>
+            <a href="#messages" onclick="showSection('messages')"><i class="fas fa-heart"></i> Mensagens</a>
+            <a href="#timeline" onclick="showSection('timeline')"><i class="fas fa-clock"></i> Nossa História</a>
+            <a href="#wishes" onclick="showSection('wishes')"><i class="fas fa-gift"></i> Desejos</a>
+            <a href="#recipes" onclick="showSection('recipes')"><i class="fas fa-utensils"></i> Receitas Especiais</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Seção Inicial -->
+        <section id="home" class="section active">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h2 class="hero-title">Feliz Aniversário, Mamãe!</h2>
+                    <p class="hero-message">
+                        Para a mulher mais especial do mundo, que sempre nos ensinou o que é o amor verdadeiro.
+                        Este site é uma pequena demonstração de todo o carinho que temos por você.
+                    </p>
+                    <div class="birthday-wish">
+                        <p class="age-celebration">🎂 Celebrando uma vida linda cheia de histórias e conquistas! 🎂</p>
+                        <p class="special-quote">"O amor de mãe é o combustível que nos permite fazer o impossível." - Marion C. Garretty</p>
+                    </div>
+                    <div class="hero-buttons">
+                        <button class="btn-primary" onclick="showSection('memories')">
+                            <i class="fas fa-images"></i>
+                            Ver Memórias
+                        </button>
+                        <button class="btn-secondary" onclick="showSection('messages')">
+                            <i class="fas fa-heart"></i>
+                            Ler Mensagens
+                        </button>
+                        <button class="btn-tertiary" onclick="openModal('birthdayModal')">
+                            <i class="fas fa-birthday-cake"></i>
+                            Surpresa Especial!
+                        </button>
+                    </div>
+                    <div class="countdown-container">
+                        <h3>Tempo de celebração:</h3>
+                        <div id="countdown">
+                            <span id="days"></span> dias 
+                            <span id="hours"></span> horas 
+                            <span id="minutes"></span> minutos 
+                            <span id="seconds"></span> segundos
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="image-frame">
+                        <img src="/img/mamy.jpg" alt="Dona Nilza" class="hero-photo">
+                        <div class="birthday-crown">👑</div>
+                        <div class="photo-tag">Rainha do Nosso Coração</div>
+                    </div>
+                    <div class="floating-hearts">
+                        <i class="fas fa-heart"></i>
+                        <i class="fas fa-heart"></i>
+                        <i class="fas fa-heart"></i>
+                        <i class="fas fa-heart"></i>
+                        <i class="fas fa-heart"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Memórias -->
+        <section id="memories" class="section">
+            <div class="section-container">
+                <h2 class="section-title">Nossas Memórias ✨</h2>
+                <p class="section-subtitle">Momentos especiais que guardaremos para sempre no coração</p>
+                
+                <div class="memory-categories">
+                    <button class="category-btn active" data-category="all">Todas</button>
+                    <button class="category-btn" data-category="family">Família</button>
+                    <button class="category-btn" data-category="travel">Viagens</button>
+                    <button class="category-btn" data-category="celebration">Celebrações</button>
+                    <button class="category-btn" data-category="daily">Dia a Dia</button>
+                </div>
+                
+                <div class="gallery-carousel">
+                    <div class="photo-slide" data-category="family" onclick="openPhotoModal('Amor de Mãe', 'O abraço mais aconchegante do mundo', '/img/abraco.jpg')">
+                        <img src="/img/abraco.jpg" alt="Memória especial">
+                        <div class="photo-caption">
+                            <h3>Amor de Mãe</h3>
+                            <p>O abraço mais aconchegante do mundo</p>
+                            <div class="memory-date"><i class="far fa-calendar-alt"></i> 12/12/2023</div>
+                        </div>
+                    </div>
+                    <div class="photo-slide" data-category="travel" onclick="openPhotoModal('Passeios Juntos', 'Cada momento ao seu lado é especial', '/img/IMG_20240113_210637.jpg">
+                        <img src="/img/IMG_20240113_210637.jpg" alt="Natureza">
+                        <div class="photo-caption">
+                            <h3>Passeios Juntos</h3>
+                            <p>Cada momento ao seu lado é especial</p>
+                            <div class="memory-date"><i class="far fa-calendar-alt"></i> Março de 2024</div>
+                        </div>
+                    </div>
+                    <div class="photo-slide" data-category="celebration" onclick="openPhotoModal('Beleza e Delicadeza', 'Como as flores, você traz cor à nossa vida', '/img/IMG_20240629_180014.jpg')">
+                        <img src="/img/IMG_20240629_180014.jpg" alt="Flores">
+                        <div class="photo-caption">
+                            <h3>Beleza e Delicadeza</h3>
+                            <p>Como as flores, você traz cor à nossa vida</p>
+                            <div class="memory-date"><i class="far fa-calendar-alt"></i> Seu aniversário passado</div>
+                        </div>
+                    </div>
+                    <div class="photo-slide" data-category="family" onclick="openPhotoModal('Nossa Família', 'O lar que você construiu com tanto amor', '/img/IMG_20240609_170435.jpg')">
+                        <img src="/img/IMG_20240609_170435.jpg" alt="Família">
+                        <div class="photo-caption">
+                            <h3>Nossa Família</h3>
+                            <p>O lar que você construiu com tanto amor</p>
+                            <div class="memory-date"><i class="far fa-calendar-alt"></i></div>
+                        </div>
+                    </div>
+                    <div class="photo-slide" data-category="daily" onclick="openPhotoModal('Momentos de Paz', 'Sua presença traz tranquilidade ao nosso coração', '/img/IMG_20250325_181438.jpg')">
+                        <img src="/img/IMG_20250325_181438.jpg" alt="Paz">
+                        <div class="photo-caption">
+                            <h3>Momentos de Paz</h3>
+                            <p>Sua presença traz tranquilidade ao nosso coração</p>
+                            <div class="memory-date"><i class="far fa-calendar-alt"></i> Todo dia</div>
+                        </div>
+                    </div>
+                 
+                <div class="memory-quote">
+                    <blockquote>
+                        "As memórias que criamos juntos são como colchas de retalhos - cada pedaço único, mas quando costurados juntos, formam uma linda tapeçaria de amor."
+                        <footer>- Sua Família</footer>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Mensagens -->
+        <section id="messages" class="section">
+            <div class="section-container">
+                <h2 class="section-title">Mensagens do Coração 💝</h2>
+                <p class="section-subtitle">Palavras que vêm diretamente do nosso coração para o seu</p>
+                
+                <div class="messages-grid">
+                    <div class="message-card" onclick="openModal('messageModal1')">
+                        <div class="message-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>Gratidão Eterna</h3>
+                        <p>
+                            Obrigado por cada sacrifício, cada carinho, cada palavra de apoio...
+                        </p>
+                        <div class="message-author">
+                            <img src="/img/IMG_20250511_120904.jpg" alt="Filho Jean">
+                            <span>Jean</span>
+                        </div>
+                        <span class="read-more-btn">Ler mais</span>
+                    </div>
+                    
+                    <div class="message-card" onclick="openModal('messageModal2')">
+                        <div class="message-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3>Nossa Inspiração</h3>
+                        <p>
+                            Sua força, sua bondade e sua sabedoria nos inspiram todos os dias...
+                        </p>
+                        <div class="message-author">
+                            <img src="/img/IMG_20240303_153859.jpg" alt="Filho Nelton">
+                            <span>Nelton</span>
+                        </div>
+                        <span class="read-more-btn">Ler mais</span>
+                    </div>
+                    
+                    <div class="message-card" onclick="openModal('messageModal3')">
+                        <div class="message-icon">
+                            <i class="fas fa-gem"></i>
+                        </div>
+                        <h3>Tesouro Precioso</h3>
+                        <p>
+                            Não existe tesouro mais valioso que o amor de uma mãe...
+                        </p>
+                        <div class="message-author">
+                            <img src="/img/IMG-20250322-WA0200.jpg" alt="Filho Bryson">
+                            <span>Bryson</span>
+                        </div>
+                        <span class="read-more-btn">Ler mais</span>
+                    </div>
+                    
+                
+                <div class="video-message">
+                    <h3>Uma Mensagem Especial em Vídeo</h3>
+                    <div class="video-container">
+                        <video controls poster="/img/video-thumbnail.jpg">
+                            <source src="/videos/mensagem.mp4" type="video/mp4">
+                            Seu navegador não suporta o elemento de vídeo.
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Timeline -->
+        <section id="timeline" class="section">
+            <div class="section-container">
+                <h2 class="section-title">Nossa História 📖</h2>
+                <p class="section-subtitle">Momentos importantes da nossa jornada juntos</p>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-icon">🌟</div>
+                        <div class="timeline-content">
+                            <h3>O Início de Tudo <span class="timeline-year">1987</span></h3>
+                            <p>Quando você nasceu e trouxe luz ao mundo. Mesmo antes de nos conhecermos, o universo já preparava essa bênção.</p>
+                            <div class="timeline-photo">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-icon">👶</div>
+                        <div class="timeline-content">
+                            <h3>Nossas Chegadas <span class="timeline-year">2008,2012,2017</span></h3>
+                            <p>Quando você se tornou mãe e mudou nossas vidas para sempre. Cada filho que chegou multiplicou seu amor sem dividi-lo.</p>
+                            <div class="timeline-photo">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-icon">🏠</div>
+                        <div class="timeline-content">
+                            <h3>Construindo um Lar <span class="timeline-year">2024</span></h3>
+                            <p>Como você transformou uma casa em um lar cheio de amor. Cada objeto conta uma história, cada canto guarda uma memória.</p>
+                            <div class="timeline-photo">
+                                <img src="/img/IMG_20250504_212544.jpg" alt="Casa da família">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-icon">🪑</div>
+                        <div class="timeline-content">
+                            <h3>Nos Ensinando a Vida <span class="timeline-year">2008-2025</span></h3>
+                            <p>Todas as lições valiosas que você nos passou. Desde amarrar os sapatos até enfrentar os desafios da vida adulta.</p>
+                            <div class="timeline-photo">
+                                <img src="/img/IMG_20220619_141823.jpg" alt="Momentos">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-icon">🎂</div>
+                        <div class="timeline-content">
+                            <h3>Hoje - Seu Aniversário <span class="timeline-year">2025</span></h3>
+                            <p>Celebrando a pessoa maravilhosa que você é. Cada ruga conta uma história, cada fio de cabelo branco representa uma lição.</p>
+                            <div class="timeline-photo">
+                                <img src="/img/IMG-20250427-WA0026.jpg" alt="Dona Nilza hoje">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-quote">
+                    <blockquote>
+                        "A vida nos deu a melhor história de amor: a de uma mãe e seus filhos. E o melhor final feliz: saber que esse amor nunca terá fim."
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Desejos -->
+        <section id="wishes" class="section">
+            <div class="section-container">
+                <h2 class="section-title">Nossos Desejos para Você 🎁</h2>
+                <p class="section-subtitle">Que todos os seus sonhos se realizem</p>
+                
+                <div class="wishes-grid">
+                    <div class="wish-card">
+                        <div class="wish-icon">🌈</div>
+                        <h3>Muita Felicidade</h3>
+                        <p>Que cada dia seja repleto de alegria e sorrisos. Que você encontre motivos para sorrir nas pequenas coisas da vida.</p>
+                        <div class="wish-detail">
+                            <i class="fas fa-quote-left"></i>
+                            Que sua vida seja tão colorida quanto seu coração é grande.
+                        </div>
+                    </div>
+                    
+                    <div class="wish-card">
+                        <div class="wish-icon">💪</div>
+                        <h3>Saúde Plena</h3>
+                        <p>Muita saúde para aproveitar tudo que a vida tem de bom. Que seu corpo seja forte como seu espírito.</p>
+                        <div class="wish-detail">
+                            <i class="fas fa-quote-left"></i>
+                            Que cada manhã você acorde revigorada e cheia de energia.
+                        </div>
+                    </div>
+                    
+                    <div class="wish-card">
+                        <div class="wish-icon">✈️</div>
+                        <h3>Novas Aventuras</h3>
+                        <p>Que você possa realizar todos os seus sonhos de viagem. Lugares novos, culturas diferentes, memórias inesquecíveis.</p>
+                        <div class="wish-detail">
+                            <i class="fas fa-quote-left"></i>
+                            Que o mundo se abra para você como você sempre se abriu para nós.
+                        </div>
+                    </div>
+                    
+                    <div class="wish-card">
+                        <div class="wish-icon">‍‍‍👦🧑🤴</div>
+                        <h3>Família Unida</h3>
+                        <p>Que nossa família continue sempre junta e feliz. Que nossos laços se fortaleçam a cada ano que passa.</p>
+                        <div class="wish-detail">
+                            <i class="fas fa-quote-left"></i>
+                            Que nosso amor familiar seja seu porto seguro para sempre.
+                        </div>
+                    </div>
+                    
+                    <div class="wish-card">
+                        <div class="wish-icon">📚</div>
+                        <h3>Novos Aprendizados</h3>
+                        <p>Que você continue descobrindo coisas novas que te façam feliz. Cursos, hobbies, habilidades - nunca é tarde para aprender.</p>
+                        <div class="wish-detail">
+                            <i class="fas fa-quote-left"></i>
+                            Que sua curiosidade continue viva e ativa.
+                        </div>
+                    </div>
+                    
+                    <div class="wish-card">
+                        <div class="wish-icon">🕊️</div>
+                        <h3>Paz Interior</h3>
+                        <p>Que você encontre tranquilidade e satisfação em cada etapa da vida. Que seu coração esteja sempre em harmonia.</p>
+                        <div class="wish-detail">
+                            <i class="fas fa-quote-left"></i>
+                            Que você saiba o quanto é amada e valorizada.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="wish-tree">
+                    <h3>Árvore dos Desejos</h3>
+                    <p>Deixe seu desejo para Dona Nilza e veja nossa árvore crescer com amor</p>
+                    <div class="tree-container">
+                        <div class="tree-base">
+                            <img src="/img/arvore.jpg" alt="Árvore dos desejos">
+                            <div class="wish-leaves">
+                                <!-- Folhas serão adicionadas dinamicamente -->
+                            </div>
+                        </div>
+                        <form class="wish-form">
+                            <input type="text" placeholder="Escreva seu desejo..." required>
+                            <button type="submit">Adicionar à árvore</button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="final-message">
+                    <h3>❤️ Para Sempre ❤️</h3>
+                    <p>
+                        Este site é apenas uma pequena demonstração do imenso amor que temos por você, Dona Nilza. 
+                        Obrigado por ser quem você é, por nos amar incondicionalmente e por fazer da nossa 
+                        família um lugar cheio de amor e felicidade. Você é única e especial!
+                    </p>
+                    <div class="family-signatures">
+                        <div class="signature">
+                            <img src="/img/IMG-20250322-WA0200.jpg" alt="Assinatura Jean">
+                            <span>Jean</span>
+                        </div>
+                        <div class="signature">
+                            <img src="/img/IMG_20240303_153859.jpg" alt="Assinatura Nelton">
+                            <span>Nelton</span>
+                        </div>
+                        <div class="signature">
+                            <img src="/img/IMG-20250322-WA0200.jpg" alt="Assinatura Bryson">
+                            <span>Bryson</span>
+                        </div>
+                
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Nova Seção Receitas -->
+        <section id="recipes" class="section">
+            <div class="section-container">
+                <h2 class="section-title">Receitas da Mamãe 👩‍🍳</h2>
+                <p class="section-subtitle">Os pratos que nos alimentaram com amor</p>
+                
+                <div class="recipes-intro">
+                    <p>Mais do que ingredientes e técnicas, suas receitas carregam o tempero mais especial: seu amor. Aqui estão alguns dos pratos que marcaram nossa história.</p>
+                </div>
+                
+                <div class="recipes-grid">
+                    <div class="recipe-card">
+                        <div class="recipe-image">
+                            <img src="/img/bolodechoco.jpg" alt="Bolo de chocolate">
+                            <div class="recipe-time"><i class="far fa-clock"></i> 1h30</div>
+                        </div>
+                        <div class="recipe-content">
+                            <h3>Bolo de Chocolate Especial</h3>
+                            <p class="recipe-description">O bolo que alegrou tantos aniversários e tardes de domingo.</p>
+                            <div class="recipe-meta">
+                                <span><i class="fas fa-heart"></i> Favorito da Família</span>
+                                <span><i class="fas fa-calendar-alt"></i> Desde 2022</span>
+                            </div>
+                            <button class="btn-recipe" onclick="openModal('recipeModal1')">Ver Receita</button>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="recipe-card">
+                        <div class="recipe-image">
+                            <img src="/img/bolocenoura.jpg" alt="Bolo de cenoura">
+                            <div class="recipe-time"><i class="far fa-clock"></i> 1h</div>
+                        </div>
+                        <div class="recipe-content">
+                            <h3>Bolo de Cenoura com Cobertura</h3>
+                            <p class="recipe-description">O consolo perfeito para qualquer problema.</p>
+                            <div class="recipe-meta">
+                                <span><i class="fas fa-smile"></i> Remédio para Tudo</span>
+                                <span><i class="fas fa-calendar-alt"></i> Desde 2024</span>
+                            </div>
+                            <button class="btn-recipe" onclick="openModal('recipeModal4')">Ver Receita</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="recipe-quote">
+                    <blockquote>
+                        "O amor entra pelo estômago, e você, Dona Nilza, sempre soube como alimentar não só nossos corpos, mas também nossas almas."
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal de Aniversário -->
+    <div id="birthdayModal" class="modal">
+        <div class="modal-content birthday-modal">
+            <span class="close" onclick="closeModal('birthdayModal')">&times;</span>
+            <div class="birthday-surprise">
+                <h2>🎉 FELIZ ANIVERSÁRIO! 🎉</h2>
+                <div class="cake-animation">
+                    <div class="cake">
+                        <div class="plate"></div>
+                        <div class="layer layer-bottom"></div>
+                        <div class="layer layer-middle"></div>
+                        <div class="layer layer-top"></div>
+                        <div class="icing"></div>
+                        <div class="drip drip1"></div>
+                        <div class="drip drip2"></div>
+                        <div class="drip drip3"></div>
+                        <div class="candle"></div>
+                        <div class="flame"></div>
+                    </div>
+                </div>
+                <p>Que este novo ano de vida seja repleto de bênçãos, saúde, amor e muitas alegrias ao lado de quem você ama!</p>
+                <div class="birthday-song">
+                    <button onclick="playBirthdaySong()"><i class="fas fa-music"></i> Tocar Parabéns</button>
+                </div>
+                <div class="confetti">
+                    <div class="confetti-piece"></div>
+                    <div class="confetti-piece"></div>
+                    <div class="confetti-piece"></div>
+                    <div class="confetti-piece"></div>
+                    <div class="confetti-piece"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Foto -->
+    <div id="photoModal" class="modal">
+        <div class="modal-content photo-modal">
+            <span class="close" onclick="closeModal('photoModal')">&times;</span>
+            <div class="photo-modal-content">
+                <img id="modalPhoto" src="" alt="">
+                <div class="photo-info">
+                    <h3 id="modalPhotoTitle"></h3>
+                    <p id="modalPhotoDescription"></p>
+                    <div class="photo-actions">
+                        <button onclick="downloadPhoto()"><i class="fas fa-download"></i> Baixar</button>
+                        <button onclick="sharePhoto()"><i class="fas fa-share-alt"></i> Compartilhar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals de Mensagens -->
+    <div id="messageModal1" class="modal">
+        <div class="modal-content message-modal">
+            <span class="close" onclick="closeModal('messageModal1')">&times;</span>
+            <div class="message-full">
+                <div class="message-header">
+                    <img src="/IMG_20250511_120904.jpg" alt="Jean">
+                    <h2><i class="fas fa-heart"></i> Gratidão Eterna</h2>
+                    <p class="message-author">Do Kill para a mamãe</p>
+                </div>
+                <p>Sentimentos são confusos mas... brigado por cada sacrifício, cada carinho, cada palavra de apoio. Você é a base de tudo que sou hoje. Sua dedicação incansável, seu amor incondicional e sua sabedoria me moldaram para ser uma pessoa melhor.</p>
+                <p>Lembro de quando eu era pequeno e você ficava acordada a noite toda quando eu estava doente. Lembro das vezes que você deixou de comprar algo para si mesma para me dar um presente. Lembro de cada conselho, cada bronca (que hoje eu entendo que era por amor), cada demonstração de afeto.</p>
+                <p>Você me ensinou que amor não são apenas palavras, mas ações. Que família é o alicerce da vida. Que ser bom não é ser fraco. Que persistência vence qualquer obstáculo.</p>
+                <p>Mãe, eu poderia passar horas escrevendo sobre tudo que você significa para mim, mas nenhuma palavra seria suficiente. Saiba apenas que eu te amo mais do que posso expressar, e que sou eternamente grato por ter você na minha vida.</p>
+                <div class="message-ending">
+                    <p>Com todo meu amor,</p>
+                    <p>Seu filho, Jean</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="messageModal2" class="modal">
+        <div class="modal-content message-modal">
+            <span class="close" onclick="closeModal('messageModal2')">&times;</span>
+            <div class="message-full">
+                <div class="message-header">
+                    <img src="//img/IMG_20240303_153859.jpg" alt="Nelton">
+                    <h2><i class="fas fa-star"></i> Nossa Inspiração</h2>
+                    <p class="message-author">De Nelton para a mãe</p>
+                </div>
+                <p>Sua força, sua bondade e sua sabedoria nos inspiram todos os dias. Você é meu exemplo de vida. Quando olho para você, vejo uma mulher guerreira que nunca desistiu, que sempre encontrou um jeito de nos dar o melhor.</p>
+                <p>Quantas vezes eu te vi cansada, mas ainda assim com um sorriso no rosto? Quantas vezes você transformou o pouco em muito com sua criatividade e amor? Você nos mostrou que o amor verdadeiro é feito de pequenos gestos, de presença, de dedicação diária.</p>
+                <p>Mãe, você é minha referência de mulher forte, batalhadora, amorosa e sábia. Eu olho para você e vejo que é possível. Quando penso em superação, penso em você. Quando penso em resiliência, penso em você. Quando penso em amor incondicional, penso em você.</p>
+                <p>Se um dia eu for pelo menos metade de tudo o que você é, vou considerar minha vida um sucesso. Te amo mais do que todas as estrelas do céu!</p>
+                <div class="message-ending">
+                    <p>Com todo meu carinho,</p>
+                    <p>Seu filho, Nelton</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="messageModal3" class="modal">
+        <div class="modal-content message-modal">
+            <span class="close" onclick="closeModal('messageModal3')">&times;</span>
+            <div class="message-full">
+                <div class="message-header">
+                    <img src="/img/IMG-20250322-WA0200.jpg" alt="Bryson">
+                    <h2><i class="fas fa-gem"></i> Tesouro Precioso</h2>
+                    <p class="message-author">De Bryson  para a mamãe</p>
+                </div>
+                <p>Não existe tesouro mais valioso que o amor de uma mãe. Você é minha joia mais preciosa. Em um mundo cheio de coisas passageiras, seu amor é minha constante, minha certeza.</p>
+                <p>Lembro do seu cheiro, do seu abraço, do seu colo que sempre foi meu porto seguro.</p>
+                <p>Não importa o que aconteça, sei que sempre terei seu abraço, seu carinho, seu coração aberto para me receber. Você é rara como um diamante, brilhante como uma estrela e valiosa além de qualquer medida.</p>
+                <p>Hoje, no seu aniversário, quero que você saiba que é a pessoa mais importante da minha vida. Que seu amor me moldou, me fortaleceu e me fez quem eu sou. Que eu te amo mais do que todas as palavras podem expressar.</p>
+                <div class="message-ending">
+                    <p>Com todo meu amor,</p>
+                    <p>Seu filho, Bryson</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modals de Receitas -->
+    <div id="recipeModal1" class="modal">
+        <div class="modal-content recipe-modal">
+            <span class="close" onclick="closeModal('recipeModal1')">&times;</span>
+            <div class="recipe-full">
+                <h2><i class="fas fa-birthday-cake"></i> Bolo de Chocolate Especial</h2>
+                <div class="recipe-image">
+                    <img src="/img/bolodechoco.jpg" alt="Bolo de chocolate">
+                </div>
+                <div class="recipe-details">
+                    <div class="recipe-ingredients">
+                        <h3>Ingredientes:</h3>
+                        <ul>
+                            <li>4 ovos</li>
+                            <li>1 xícara de óleo</li>
+                            <li>1 xícara de leite morno</li>
+                            <li>2 xícaras de açúcar</li>
+                            <li>3 xícaras de farinha de trigo</li>
+                            <li>1 xícara de chocolate em pó</li>
+                            <li>1 colher (sopa) de fermento em pó</li>
+                            <li>1 pitada de sal</li>
+                        </ul>
+                    </div>
+                    <div class="recipe-instructions">
+                        <h3>Modo de Preparo:</h3>
+                        <ol>
+                            <li>Bata as claras em neve e reserve.</li>
+                            <li>Em outra tigela, misture as gemas, o óleo e o açúcar até obter um creme homogêneo.</li>
+                            <li>Adicione o leite morno e misture bem.</li>
+                            <li>Peneire a farinha, o chocolate em pó e o sal, e incorpore à mistura anterior.</li>
+                            <li>Por último, adicione o fermento e as claras em neve, misturando delicadamente.</li>
+                            <li>Asse em forno médio (180°C) por aproximadamente 40 minutos.</li>
+                        </ol>
+                        <p class="recipe-secret">Segredo Especial: Adicione 1 colher de café instantâneo para intensificar o sabor do chocolate!</p>
+                    </div>
+                </div>
+                <div class="recipe-story">
+                    <h3>História dessa Receita:</h3>
+                    <p>Esta receita foi criada por você quando Bryson fez 5 anos e pediu um bolo "de chocolate de verdade". Desde então, tornou-se tradição familiar, sendo preparado para todas as ocasiões especiais. Já foram mais de 50 bolos feitos com essa receita ao longo dos anos!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- Modal do Bolo de Cenoura -->
+<div id="recipeModal4" class="modal">
+    <div class="modal-content recipe-modal">
+        <span class="close" onclick="closeModal('recipeModal4')">&times;</span>
+        <div class="recipe-full">
+            <h2><i class="fas fa-carrot"></i> Bolo de Cenoura com Cobertura</h2>
+            <div class="recipe-image">
+                <img src="/img/bolocenoura.jpg" alt="Bolo de cenoura">
+            </div>
+            <div class="recipe-details">
+                <div class="recipe-ingredients">
+                    <h3>Ingredientes (Massa):</h3>
+                    <ul>
+                        <li>3 cenouras médias</li>
+                        <li>4 ovos</li>
+                        <li>1 xícara de óleo</li>
+                        <li>2 xícaras de açúcar</li>
+                        <li>2 xícaras de farinha de trigo</li>
+                        <li>1 colher (sopa) de fermento em pó</li>
+                    </ul>
+                    <h3>Ingredientes (Cobertura):</h3>
+                    <ul>
+                        <li>1 colher (sopa) de manteiga</li>
+                        <li>3 colheres (sopa) de chocolate em pó</li>
+                        <li>1 xícara de açúcar</li>
+                        <li>1 xícara de leite</li>
+                    </ul>
+                </div>
+                <div class="recipe-instructions">
+                    <h3>Modo de Preparo (Massa):</h3>
+                    <ol>
+                        <li>Bata no liquidificador as cenouras, os ovos e o óleo.</li>
+                        <li>Em uma tigela, misture o açúcar e a farinha de trigo.</li>
+                        <li>Despeje a mistura do liquidificador na tigela e misture bem.</li>
+                        <li>Adicione o fermento e misture delicadamente.</li>
+                        <li>Asse em forno médio (180°C) por aproximadamente 40 minutos.</li>
+                    </ol>
+                    <h3>Modo de Preparo (Cobertura):</h3>
+                    <ol>
+                        <li>Leve todos os ingredientes ao fogo baixo, mexendo sempre.</li>
+                        <li>Cozinhe até engrossar e despeje sobre o bolo ainda quente.</li>
+                    </ol>
+                    <p class="recipe-secret">Segredo Especial: Adicione 1/2 xícara de chocolate picado à massa para bolos extra fofos!</p>
+                </div>
+            </div>
+            <div class="recipe-story">
+                <h3>História dessa Receita:</h3>
+                <p>De um experimento normal para um dos bolos mais gostososque já provei.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <footer>
+        <div class="footer-content">
+            <p>Feito com ❤️ amor pelo seu amado filho Kill</p>
+            <p>© 2025 - Todos os direitos reservados a DAFEJY Techs</p>
+            <div class="social-links">
+                <a href="https://www.instagram.com/kazinho_official01?igsh=dzNvajEwOWhoYXYx"><i class="fab fa-instagram"></i></a>
+                <a href="https://api.whatsapp.com/send?phone=+258876379280&text=👾⚫𝔒𝔦𝔦%20*𝔅𝔩𝔲𝔢*%20💀🖤✨%20𝔢𝔰𝔱𝔬𝔲%20𝔰𝔞𝔩𝔳𝔞𝔫𝔡𝔬%20𝔰𝔢𝔲%20𝔫ú𝔪𝔢𝔯𝔬%20𝔭𝔞𝔯𝔞%20𝔫𝔬𝔳𝔞𝔰%20𝔞𝔪𝔦𝔷𝔞𝔡𝔢𝔰%20⛓️🧬%20𝔰𝔞𝔩𝔳𝔞%20𝔬%20𝔪𝔢𝔲%20𝔱𝔟𝔪%20🚨🧿%20𝔪𝔢𝔲%20𝔫𝔬𝔪𝔢%20é"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="/js/dashboard-clean.js"></script>
+    <script>
+        // Countdown para o aniversário
+        function updateCountdown() {
+            const now = new Date();
+            const nextBirthday = new Date(now.getFullYear(), 5, 28); // 28 de junho (mês 5)
+            
+            if (now > nextBirthday) {
+                nextBirthday.setFullYear(nextBirthday.getFullYear() + 1);
+            }
+            
+            const diff = nextBirthday - now;
+            
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            document.getElementById('days').textContent = days;
+            document.getElementById('hours').textContent = hours;
+            document.getElementById('minutes').textContent = minutes;
+            document.getElementById('seconds').textContent = seconds;
+        }
+        
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+        
+        // Filtro de categorias para as memórias
+        $('.category-btn').click(function() {
+            $('.category-btn').removeClass('active');
+            $(this).addClass('active');
+            
+            const category = $(this).data('category');
+            
+            if (category === 'all') {
+                $('.photo-slide').show();
+            } else {
+                $('.photo-slide').hide();
+                $(`.photo-slide[data-category="${category}"]`).show();
+            }
+        });
+        
+        // Árvore de desejos
+        $('.wish-form').submit(function(e) {
+            e.preventDefault();
+            const wishText = $(this).find('input').val();
+            
+            if (wishText.trim() !== '') {
+                const colors = ['#ff7675', '#74b9ff', '#55efc4', '#ffeaa7', '#a29bfe'];
+                const randomColor = colors[Math.floor(Math.random() * colors.length)];
+                
+                $('.wish-leaves').append(`
+                    <div class="wish-leaf" style="background-color: ${randomColor}">
+                        ${wishText}
+                    </div>
+                `);
+                
+                $(this).find('input').val('');
+            }
+        });
+        
+        // Tocar música de parabéns
+        function playBirthdaySong() {
+            const audio = new Audio('/song/Happy Birthday to You  Rap Remix   Birthday Song 2025.mp3');
+            audio.play();
+        }
+    </script>
+</body>
+</html>
